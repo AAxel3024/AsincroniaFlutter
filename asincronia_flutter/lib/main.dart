@@ -80,20 +80,29 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                iconSize: 80,
-                onPressed: () async {
-                  setState(() {
-                    widthPositivo = 300;
-                    timePositivo = 1;
-                  });
-                  getPositivo = await MockApi().getFerrariInteger();
-                  setState(() {
-                    widthPositivo = 0;
-                    timePositivo = 0;
-                  });
-                },
-                icon: const Icon(Icons.add),
+              Container(
+                margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: Ink(
+                   decoration: const ShapeDecoration(
+                      color: Colors.green,
+                      shape: CircleBorder()
+                      ),
+                  child: IconButton(
+                    iconSize: 80,
+                    onPressed: () async {
+                      setState(() {
+                        widthPositivo = 300;
+                        timePositivo = 1;
+                      });
+                      getPositivo = await MockApi().getFerrariInteger();
+                      setState(() {
+                        widthPositivo = 0;
+                        timePositivo = 0;
+                      });
+                    },
+                    icon: const Icon(Icons.add),
+                  ),
+                ),
               ),
               getAnimation(
                 width: widthPositivo,
@@ -101,21 +110,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 getData: getPositivo,
                 color: Colors.green,
               ),
-              const Divider(),
-              IconButton(
-                iconSize: 80,
-                onPressed: () async {
-                  setState(() {
-                    widthHome = 300;
-                    timeHome = 3;
-                  });
-                  getHome = await MockApi().getHyundaiInteger();
-                  setState(() {
-                    widthHome = 0;
-                    timeHome = 0;
-                  });
-                },
-                icon: const Icon(Icons.car_crash),
+              Container(
+                margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: Ink(
+                   decoration: const ShapeDecoration(
+                      color: Colors.yellow,
+                      shape: CircleBorder()
+                      ),
+                  child: IconButton(
+                    iconSize: 80,
+                    onPressed: () async {
+                      setState(() {
+                        widthHome = 300;
+                        timeHome = 3;
+                      });
+                      getHome = await MockApi().getHyundaiInteger();
+                      setState(() {
+                        widthHome = 0;
+                        timeHome = 0;
+                      });
+                    },
+                    icon: const Icon(Icons.car_crash),
+                  ),
+                ),
               ),
               getAnimation(
                 width: widthHome,
@@ -123,21 +140,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 getData: getHome,
                 color: Colors.yellow,
               ),
-              const Divider(),
-              IconButton(
-                iconSize: 80,
-                onPressed: () async {
-                  setState(() {
-                    widthNegativo = 300;
-                    timeNegativo = 10;
-                  });
-                  getNegativo = await MockApi().getFisherPriceInteger();
-                  setState(() {
-                    widthNegativo = 0;
-                    timeNegativo = 0;
-                  });
-                },
-                icon: const Icon(Icons.remove_circle),
+              Container(
+                margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: Ink(
+                    decoration: const ShapeDecoration(
+                          color: Colors.red,
+                          shape: CircleBorder()
+                          ),
+                  child: IconButton(
+                    iconSize: 80,
+                    onPressed: () async {
+                      setState(() {
+                        widthNegativo = 300;
+                        timeNegativo = 10;
+                      });
+                      getNegativo = await MockApi().getFisherPriceInteger();
+                      setState(() {
+                        widthNegativo = 0;
+                        timeNegativo = 0;
+                      });
+                    },
+                    icon: const Icon(Icons.remove_circle),
+                  ),
+                ),
               ),
               getAnimation(
                 width: widthNegativo,
